@@ -1,0 +1,25 @@
+class Solution {
+    public List<String> removeAnagrams(String[] words) {
+        List<String> Ana = new ArrayList<>();
+        Stack<String> gram=new Stack<>();
+        for(int i=0; i<words.length; i++)
+        {
+            char chars[]=words[i].toCharArray();
+            Arrays.sort(chars);
+            if(gram.isEmpty())
+            {
+                gram.add(String.valueOf(chars));
+                Ana.add(words[i]);
+            }
+            else
+            {
+                if(!gram.peek().equals(String.valueOf(chars)))
+                {
+                   gram.add(String.valueOf(chars));
+                    Ana.add(words[i]); 
+                }
+            }
+        }
+        return Ana;
+    }
+}
