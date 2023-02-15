@@ -6,9 +6,7 @@ class Solution {
         {
             if(nums[i]!=val)
             {
-                int temp=nums[i];
                 nums[count]=nums[i];
-                nums[i]=temp;
                 count++;
             }
         }
